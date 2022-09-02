@@ -1,0 +1,129 @@
+Open Git Bash From windows START tab.
+
+
+S3962744@W8477746 MINGW64 ~
+$ git config --global user.name "amia20"
+
+S3962744@W8477746 MINGW64 ~
+$ git config --global user.email "amina.miah@yahoo.com"
+
+S3962744@W8477746 MINGW64 ~
+$ git config --list
+diff.astextplain.textconv=astextplain
+filter.lfs.clean=git-lfs clean -- %f
+filter.lfs.smudge=git-lfs smudge -- %f
+filter.lfs.process=git-lfs filter-process
+filter.lfs.required=true
+http.sslbackend=openssl
+http.sslcainfo=C:/Users/s3962744/AppData/Local/Programs/Git/mingw64/ssl/certs/ca-bundle.crt
+core.autocrlf=true
+core.fscache=true
+core.symlinks=false
+core.fsmonitor=true
+core.editor="C:\\Program Files (x86)\\Notepad++\\notepad++.exe" -multiInst -notabbar -nosession -noPlugin
+pull.rebase=false
+credential.helper=manager-core
+credential.https://dev.azure.com.usehttppath=true
+init.defaultbranch=master
+user.name=amia20
+user.email=amina.miah@yahoo.com
+
+S3962744@W8477746 MINGW64 ~
+$ ls
+'$RECYCLE.BIN'/   Configuration/  'Custom Office Templates'/   Downloads/   Music/   Pictures/   Videos/   desktop.ini
+
+
+*******Cloning the repository to local computer**************
+S3962744@W8477746 MINGW64 ~
+$ git clone https://github.com/amia20/GitBash_Testing.git
+Cloning into 'GitBash_Testing'...
+remote: Enumerating objects: 3, done.
+remote: Counting objects: 100% (3/3), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+Receiving objects: 100% (3/3), done.
+
+
+*************Changing/entering to working folder**************
+S3962744@W8477746 MINGW64 ~
+$ cd GitBash_Testing
+
+
+
+************Error occured, So Change the ownership of repository to RMIT**********
+
+S3962744@W8477746 MINGW64 /h/GitBash_Testing
+$ git add Hello.txt
+fatal: detected dubious ownership in repository at '//rmit.internal/USRHome/sl4/s3962744/GitBash_Testing'
+To add an exception for this directory, call:
+
+        git config --global --add safe.directory '%(prefix)///rmit.internal/USRHome/sl4/s3962744/GitBash_Testing'
+
+FIXED:
+S3962744@W8477746 MINGW64 /h/GitBash_Testing
+$ git config --global --add safe.directory '%(prefix)///rmit.internal/USRHome/sl4/s3962744/GitBash_Testing'
+
+
+***************Add a file to GIT******
+S3962744@W8477746 MINGW64 /h/GitBash_Testing (main)
+$ ls
+Hello.txt  README.md
+
+S3962744@W8477746 MINGW64 /h/GitBash_Testing (main)
+$ git add Hello.txt
+
+
+***************Commit a file to GIT******
+S3962744@W8477746 MINGW64 /h/GitBash_Testing (main)
+$ git commit -m "first commit" Hello.txt
+[main 7b854ec] first commit
+ 1 file changed, 1 insertion(+)
+ create mode 100644 Hello.txt
+
+***************Push a file to GIT******
+
+S3962744@W8477746 MINGW64 /h/GitBash_Testing (main)
+$ git push -u origin main
+info: please complete authentication in your browser...
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 288 bytes | 5.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/amia20/GitBash_Testing.git
+   8ed7f2b..7b854ec  main -> main
+branch 'main' set up to track 'origin/main'.
+
+S3962744@W8477746 MINGW64 /h/GitBash_Testing (main)
+$ git commit -m "first commit" Hello.txt
+[main f53cc27] first commit
+ 1 file changed, 5 insertions(+), 1 deletion(-)
+
+S3962744@W8477746 MINGW64 /h/GitBash_Testing (main)
+$ git push -u origin main
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 339 bytes | 5.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/amia20/GitBash_Testing.git
+   7b854ec..f53cc27  main -> main
+branch 'main' set up to track 'origin/main'.
+
+S3962744@W8477746 MINGW64 /h/GitBash_Testing (main)
+$ git commit -m "second commit" Hello.txt
+[main ae5788e] second commit
+ 1 file changed, 4 insertions(+), 1 deletion(-)
+
+S3962744@W8477746 MINGW64 /h/GitBash_Testing (main)
+$ git push -u origin main
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 365 bytes | 6.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/amia20/GitBash_Testing.git
+   f53cc27..ae5788e  main -> main
+branch 'main' set up to track 'origin/main'.
